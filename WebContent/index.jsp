@@ -14,6 +14,7 @@
 </head>
 <body>
 	<%@ include file="./layout/nav.jsp" %>
+	<h1><%= request.getContextPath() %></h1>
 
 
 </body>

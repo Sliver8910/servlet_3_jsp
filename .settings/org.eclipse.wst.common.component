@@ -2,7 +2,7 @@
     <wb-module deploy-name="servlet_3_jsp">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
-        <property name="context-root" value="servlet_3_jsp"/>
         <property name="java-output-path" value="/servlet_3_jsp/build/classes"/>
+        <property name="context-root" value="servlet_3_jsp"/>
     </wb-module>
 </project-modules>
