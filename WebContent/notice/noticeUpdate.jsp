@@ -36,7 +36,7 @@
 <body>
 	<div class="container">
 		<h2>Notice Update Page</h2>
-		<form action="./noticeUpdateResult.jsp" method="get">
+		<form action="./noticeUpdateResult.jsp" method="post">
 		<input type="text" name = "num" value="<%=noticeDTO.getNum()%>" hidden="" readonly="readonly">
 			<div class="form-group">
 				<label for="title">Title : </label> <input type="text"
