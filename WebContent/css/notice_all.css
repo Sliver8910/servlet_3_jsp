@@ -1,0 +1,73 @@
+@charset "UTF-8";
+
+body {
+	background: url("../images/back.gif") repeat;
+	
+}
+
+.title_n{
+	font-weight: bold;
+	font-size: 30;
+	text-align: center;
+	padding: 43px 0;
+	
+}
+
+.table{
+	background-color: white;
+	vertical-align: middle;
+	border: none;
+	
+}
+.table td{
+	border: none;
+}
+thead{
+	background-color: black;
+	color: white;
+	font: 13px;
+	vertical-align: middle;
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+.th1{
+	font: 13px;
+	text-align: center;
+	line-height: 37px;
+	border: none;
+}
+
+.table a {
+	color:  black;
+
+}
+.table a:hover {
+	font-weight: bolder; 
+	color: black;			
+}
+
+.num {
+	font-size: 10px;
+	color: #1f1f1f;
+}
+
+.date {
+	font-size: 10px;
+	color: #757575;
+	line-height: 37px;
+	
+}
+
+.hit{
+	color: #1f1f1f;
+	font-size: 10px;
+	
+}
+.con1 {
+	padding: 20px 40px; 
+	
+}
+#title1 {
+	padding-left: 20ex;
+}
