@@ -33,6 +33,8 @@
 		String message = "Write Fail";
 		request.setAttribute("msg", message);
 		RequestDispatcher view = request.getRequestDispatcher("../common/common_result.jsp");
+		view.forward(request, response);
+		
 	}
 
 %>
