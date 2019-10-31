@@ -15,6 +15,7 @@
 
 </head>
 <body>
+<%@ include file="../layout/nav.jsp" %>
 	<div class="container">
 		<div class="jumbotron">
 			<h1>Point Select Page</h1>

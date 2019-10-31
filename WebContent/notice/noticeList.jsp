@@ -33,6 +33,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
 <body>
+<%@ include file="../layout/nav.jsp" %>
 <h1 class="title_n">NOTICE</h1> 
 	<div class="container">
 		<table class="table "> 

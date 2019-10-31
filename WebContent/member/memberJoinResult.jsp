@@ -17,14 +17,12 @@
 	String name = request.getParameter("name");
 	String email = request.getParameter("email");
 	String phone = request.getParameter("phone");
-	int lev = Integer.parseInt(request.getParameter("lev"));
 	
 	dto.setId(id);
 	dto.setPw(pw);
 	dto.setName(name);
 	dto.setEmail(email);
 	dto.setPhone(phone);
-	dto.setLev(lev);
 	
 	Connection con = DBConnector.getConnection();
 	

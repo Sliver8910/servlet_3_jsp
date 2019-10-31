@@ -34,6 +34,7 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
 <body>
+<%@ include file="../layout/nav.jsp" %>
 	<div class="container">
 		<h2>Notice Update Page</h2>
 		<form action="./noticeUpdateResult.jsp" method="post">
