@@ -1,4 +1,9 @@
+<%@page import="com.ruda.member.MemberDTO"%>
+<%
+MemberDTO memberDTO = (MemberDTO)session.getAttribute("dto");
 
+
+%>
 <nav class="navbar navbar-inverse">
 		<div class="container-fluid">
 			<div class="navbar-header">
@@ -17,10 +22,17 @@
 				<li><a href="<%=request.getContextPath() %>/notice/noticeList.jsp">Notice</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
+			<% if(memberDTO !=null){ %>
+				<li><a href="<%=request.getContextPath() %>/member/memberMypage.jsp"><span class="glyphicon glyphicon-user"></span>
+						My Page</a></li>
+				<li><a href="<%=request.getContextPath() %>/member/memberLogout.jsp"><span class="glyphicon glyphicon-log-out"></span>
+						Logout</a></li>
+			<%}else{ %>
 				<li><a href="<%=request.getContextPath() %>/member/memberJoinForm.jsp"><span class="glyphicon glyphicon-user"></span>
-						Sign Up</a></li>
+						Sign up</a></li>
 				<li><a href="<%=request.getContextPath() %>/member/memberLoginForm.jsp"><span class="glyphicon glyphicon-log-in"></span>
 						Login</a></li>
+			<%} %>
 			</ul>
 		</div>
 	</nav>

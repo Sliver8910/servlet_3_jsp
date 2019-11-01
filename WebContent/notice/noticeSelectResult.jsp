@@ -38,8 +38,11 @@
 				</tr>
 			</tbody>
 		</table>
+		<% if(memberDTO !=null && memberDTO.getLev()==0 &&memberDTO.getId().equals(noticeDTO.getWriter())){ %>
 		<a href="./noticeUpdate.jsp?num=<%=noticeDTO.getNum() %>" class="btn btn-primary">글수정</a>
 		<a href="./noticeDelete.jsp?num=<%=noticeDTO.getNum() %>" class="btn btn-danger">글삭제</a>
+		<%}else{} %>
+		<a href="./noticeList.jsp" class="btn btn-primary">글목록</a>
 	</div>
 
 </body>

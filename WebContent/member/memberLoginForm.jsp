@@ -1,5 +1,22 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%
+	String id = "";
+	Cookie[] cookies = request.getCookies();
+	/* for(int i=0;i<cookies.length;i++){
+		if(cookies[i].getName().equals("id")){
+		id = cookies[i].getValue();
+		break;
+		} 
+	}*/
+	for(Cookie cookie: cookies){
+		if(cookie.getName().equals("id")){
+			id = cookie.getValue();
+			break;
+		}
+		
+	}
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,20 +34,20 @@
 
 	<div class="container">
 		<h2>Login</h2>
-		<form action="/action_page.php">
+		<form action="./memberLoginResult.jsp">
 			<div class="form-group">
 				<label for="id">ID:</label> <input type="text" class="form-control"
-					id="td" placeholder="Enter td" name="id">
+					id="td" placeholder="Enter td" value="<%=id %>" required="required" name="id">
 			</div>
 			<div class="form-group">
 				<label for="pw">Password:</label> <input type="password"
-					class="form-control" id="pw" placeholder="Enter password" name="pw">
+					class="form-control" id="pw" required="required" placeholder="Enter password" name="pw">
 			</div>
 			<div class="checkbox">
-				<label><input type="checkbox" name="remember">
+				<label><input type="checkbox" checked="checked" name="remember">
 					Remember me</label>
 			</div>
-			<button type="submit" class="btn btn-default">Submit</button>
+			<button type="submit" class="btn btn-primary">Login</button>
 		</form>
 	</div>
 

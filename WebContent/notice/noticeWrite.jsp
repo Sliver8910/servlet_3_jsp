@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>글쓰기</title>
 <link href="/servlet_3_jsp/css/notice_all.css" rel="stylesheet">	
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet"
@@ -22,6 +22,15 @@
 </head>
 <body>
 <%@ include file="../layout/nav.jsp" %>
+<%
+	if(memberDTO ==null || memberDTO.getLev() !=0 ){
+		request.setAttribute("msg", "권한이 없습니다");
+		request.setAttribute("path", "../index.jsp");
+		RequestDispatcher view = request.getRequestDispatcher("../common/common_result.jsp");
+		view.forward(request, response);
+		
+	}else{
+%>
 	<div class="container">
 		<h2>Notice Insert Page</h2>
 		<form action="./noticeWriteResult.jsp" method="post">
@@ -43,6 +52,6 @@
 			<button type="submit" class="btn btn-default">Submit</button>
 		</form>
 	</div>
-
+<%} %>
 </body>
 </html>

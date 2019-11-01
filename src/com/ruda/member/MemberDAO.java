@@ -39,23 +39,34 @@ public class MemberDAO {
 		return result;
 	}
 	
-	public MemberDTO memberLogin(Connection con, String id, String pw) throws Exception{
-		MemberDTO dto=null;
+	public int memberDelete(Connection con, MemberDTO dto) throws Exception {
+		
+		this.sql = "delete member where id=?";
+		this.st = con.prepareStatement(sql);
+		st.setString(1, dto.getId());
+		
+		this.result = st.executeUpdate();
+		
+		st.close();
+		
+		return result;
+	}
+	
+	public MemberDTO memberLogin(Connection con, MemberDTO dto) throws Exception{
 		
 		this.sql = "select * from member where id=? and pw = ?";
 		this.st = con.prepareStatement(sql);
-		st.setString(1, id);
-		st.setString(2, pw);
+		st.setString(1, dto.getId());
+		st.setString(2, dto.getPw());
 		this.rs = st.executeQuery();
 		if(rs.next()) {
-			dto = new MemberDTO();
-			dto.setId(rs.getString(1));
-			dto.setPw(rs.getString(2));
 			dto.setName(rs.getString(3));
 			dto.setPhone(rs.getString(4));
 			dto.setEmail(rs.getString(5));
 			dto.setLev(rs.getInt(6));
 			
+		}else {
+			dto = null;
 		}
 		
 		rs.close();
@@ -64,5 +75,20 @@ public class MemberDAO {
 		
 		return dto;
 	}
+	
+	public int memberUpdate(Connection con, MemberDTO dto)throws Exception {
 
+		String sql = "update member set pw=?, name=?, phone=?, email=? where id=? ";
+		this.st = con.prepareStatement(sql);
+		st.setString(1, dto.getPw());
+		st.setString(2, dto.getName());
+		st.setString(3, dto.getPhone());
+		st.setString(4, dto.getEmail());
+		st.setString(5, dto.getId());
+		
+		this.result = st.executeUpdate();
+		st.close();
+	
+	return result;
+	}
 }

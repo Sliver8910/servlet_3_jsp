@@ -37,7 +37,7 @@
       <label for="phone">Phone:</label>
       <input type="tel" class="form-control" id="phone" required="required" placeholder="Enter phone" name="phone">
     </div>
-    <button type="submit" class="btn btn-default">회원가입</button>
+    <button type="submit" class="btn btn-primary">회원가입</button>
   </form>
 </div>
 

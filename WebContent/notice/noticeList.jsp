@@ -15,7 +15,23 @@
 	ArrayList<NoticeDTO> ar = noticeDAO.noticeList(con);
 	
 	con.close();
-
+	
+	//쿠키 발행
+	//쿠키 생성시 생성자에 키와 벨류 입력
+	Cookie cookie = new Cookie("name","iu");
+	
+	//쿠키가 적용되는 Path 설정 : 보통 context path 적용
+	cookie.setPath(request.getContextPath());
+	
+	//쿠키의 유효시간
+	//단위 초단위
+	//설정을 하지 않으면 웹브라우저가 종료되면 같이 종료됨
+	cookie.setMaxAge(60*60); //1시간 =3600초
+	
+	//쿠키를 클라이언트로 전송
+	response.addCookie(cookie);
+	
+	
 %>
 <!DOCTYPE html>
 <html>
@@ -57,7 +73,9 @@
 		
 		
 		</table>
+		<% if(memberDTO != null){ if(memberDTO.getLev()==0 ){ %>
 		<a href="./noticeWrite.jsp" class="btn btn-primary">글쓰기</a>
+		<%}else{}} %>
 	</div>
 
 </body>

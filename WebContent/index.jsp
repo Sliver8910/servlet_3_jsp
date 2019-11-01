@@ -1,5 +1,7 @@
+<%@page import="com.ruda.member.MemberDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,7 +16,26 @@
 </head>
 <body>
 	<%@ include file="./layout/nav.jsp" %>
-	<h1><%= request.getContextPath() %></h1>
+	
+	<div class="container">
+	<% if(memberDTO != null ){  %>
+		<h1> After Success Login</h1>
+	<% }else{ %>	
+		<h1> Before Login </h1>
+	<% } %>
+	</div>
+	
+	<div class="container"> 
+		<%
+		 Cookie [] cookies	= request.getCookies();
+		for(int i =0;i<cookies.length;i++){
+		%>
+		<h1>name : <%= cookies[i].getName() %></h1>
+		<h1>value : <%=cookies[i].getValue() %></h1>
+		<%	
+		}
+		%>
+	</div>
 
 
 </body>
